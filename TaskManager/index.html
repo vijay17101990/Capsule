@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<title>Manage - Task</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-slider.css" />	
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">	
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-slider.js"></script>
+		<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#ex1Slider").slider();
+				$('.datepicker').datepicker({
+					format: 'mm/dd/yyyy',
+    				todayHighlight: true,
+					autoclose: true,
+					orientation: "right top"		
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="wrapper">
+				<header>
+					<h1>Task Manager</h1>
+				</header>
+				<section>
+					<div class="task-manager-page">
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a data-toggle="tab" href="#addTask">Add Task</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#viewTask">View Task</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div id="addTask" class="tab-pane fade in active">
+								<form>
+									<div class="task-manage-form">
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="col-sm-6 col-sm-offset-3">
+													<div class="form-group ">
+														<label for="task">Task:</label>
+														<input type="text" class="form-control" id="task">
+														<div class="clearfix"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="col-sm-6 col-sm-offset-3">
+													<div class="form-group">
+														<label for="task">Priority:</label>
+														<div class="form-slider">
+															<b>0</b><input id="ex1Slider" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="30" 
+															data-slider-step="1" data-slider-value="0"/><b>30</b>
+														</div>
+														<div class="clearfix"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="col-sm-6 col-sm-offset-3">
+													<div class="form-group">
+														<label for="task">Parent Task:</label>
+														<select class="form-control">
+         													 <option value="" disabled="" selected="" class="ng-binding">Select Task</option>
+          													<option>1</option>
+															<option>2</option>
+ 														</select>
+														<div class="clearfix"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="col-sm-6 col-sm-offset-3">
+													<div class="form-group">
+														<label for="task">Start date:</label>														
+														<div class="input-group date">
+														    <input type="text" class="datepicker form-control">
+														    <div class="input-group-addon">
+														        <span class="glyphicon glyphicon-th"></span>
+														    </div>
+														</div>
+														<div class="clearfix"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="col-sm-6 col-sm-offset-3">
+													<div class="form-group">
+														<label for="task">End date:</label>
+														<div class="input-group date">
+														    <input type="text" class="datepicker form-control" id="end-date">
+														    <div class="input-group-addon">
+														        <span class="glyphicon glyphicon-th"></span>
+														    </div>
+														</div>
+														<div class="clearfix"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="col-sm-6 col-sm-offset-3">
+													<div class="form-group form-btns">
+														<button class="btn btn-primary">Add Task</button>
+														<button type="button" class="btn btn-secondary">Reset</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div id="viewTask" class="tab-pane fade">
+								<form>
+									<div class="task-manage-form">
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="col-sm-6">
+													<div class="form-group">
+														<label for="task" class="frst-label">Task:</label>
+														<input type="text" class="form-control" id="view-task">
+														<div class="clearfix"></div>
+													</div>
+												</div>
+												<div class="col-sm-6">
+													<div class="form-group">
+														<label for="task" class="frst-label">Parent Task:</label>
+														<select class="form-control">
+         													 <option value="" disabled="" selected="" class="ng-binding">Select Task</option>
+          													<option>1</option>
+															<option>2</option>
+ 														</select>
+														<div class="clearfix"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="col-sm-3">
+													<div class="form-group">
+														<label for="task">Priority From:</label>
+														<input type="text" class="form-control" id="priority-from">
+														<div class="clearfix"></div>
+													</div>
+												</div>
+												<div class="col-sm-3">
+													<div class="form-group">
+														<label for="task">Priority To:</label>
+														<input type="text" class="form-control" id="priority-from">
+														<div class="clearfix"></div>
+													</div>
+												</div>
+												<div class="col-sm-3">
+													<div class="form-group">
+														<label for="task">Start Date:</label>
+														<div class="input-group date">
+														    <input type="text" class="datepicker form-control" id="start-date">
+														    <div class="input-group-addon">
+														        <span class="glyphicon glyphicon-th"></span>
+														    </div>
+														</div>
+														<div class="clearfix"></div>
+													</div>
+												</div>
+												<div class="col-sm-3">
+													<div class="form-group">
+														<label for="task">End Date:</label>
+														<div class="input-group date">
+														    <input type="text" class="datepicker form-control" id="end-date">
+														    <div class="input-group-addon">
+														        <span class="glyphicon glyphicon-th"></span>
+														    </div>
+														</div>
+														<div class="clearfix"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="table-responsive task-table">
+													<table class="table table-bordered table-hover">
+														<thead>
+															<tr>
+																<th>Task</th>
+																<th>Parent</th>
+																<th>Priority</th>
+																<th>Start</th>
+																<th>End</th>
+																<th>&nbsp;</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>Task 1</td>
+																<td>Parent Task 1</td>
+																<td>10</td>
+																<td>20/10/2017</td>
+																<td>20/10/2017</td>
+																<td>
+																	<button class="btn btn-primary">Edit</button>
+																	<button class="btn btn-default">End Task</button>
+																</td>
+															</tr>
+															<tr>
+																<td>Task 2</td>
+																<td>Parent Task 2</td>
+																<td>10</td>
+																<td>22/10/2017</td>
+																<td>22/10/2017</td>
+																<td>
+																	<button class="btn btn-primary">Edit</button>
+																	<button class="btn btn-default">End Task</button>
+																</td>
+															</tr>
+															<tr>
+																<td>Task 3</td>
+																<td>Parent Task 3</td>
+																<td>13</td>
+																<td>23/10/2017</td>
+																<td>23/10/2017</td>
+																<td>
+																	<button class="btn btn-primary">Edit</button>
+																	<button class="btn btn-default">End Task</button>
+																</td>
+															</tr>
+															<tr>
+																<td>Task 4</td>
+																<td>Parent Task 4</td>
+																<td>14</td>
+																<td>24/10/2017</td>
+																<td>24/10/2017</td>
+																<td>
+																	<button class="btn btn-primary">Edit</button>
+																	<button class="btn btn-default">End Task</button>
+																</td>
+															</tr>
+															<tr>
+																<td>Task 5</td>
+																<td>Parent Task 5</td>
+																<td>15</td>
+																<td>25/10/2017</td>
+																<td>25/10/2017</td>
+																<td>
+																	<button class="btn btn-primary">Edit</button>
+																	<button class="btn btn-default">End Task</button>
+																</td>
+															</tr>															
+														</tbody>
+													</table>
+												</div>
+											</div>											
+										</div>										
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		<footer>
+			Copyright &copy; 2018
+		</footer>
+		</div>
+	</body>
+</html>
